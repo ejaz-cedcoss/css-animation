@@ -1,0 +1,54 @@
+body {
+    align-items: center;
+    background-color: darkslateblue;
+    display: flex;
+    height: 90vh;
+    justify-content: center;
+}
+
+.card {
+    align-items: center;
+    background-color: rgb(90, 76, 180);
+    border-radius: 16px;
+    display: flex;
+    height: 400px;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    width: 310px;
+}
+
+.card h2 {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    text-shadow: 2px 2px black;
+    z-index: 999;
+}
+
+.card::before {
+    animation: animate 3s infinite linear;
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    content: '';
+    height: 140%;
+    position: absolute;
+    width: 200px;
+}
+
+.card ::after {
+    background-color: rgb(90, 76, 180);
+    border-radius: 16px;
+    content: '';
+    inset: 10px;
+    position: absolute;
+    z-index: 1;
+    } 
+
+@keyframes animate {
+    0%{
+       transform: rotate(0deg);
+    }
+     100% {
+        transform: rotate(360deg);
+     }
+}
